@@ -14,4 +14,8 @@ Hanami.configure do
   end
 
   logger level: ENV.fetch('LOGGER_LEVEL')
+
+  environment :test do
+    logger level: ENV.fetch('LOGGER_LEVEL'), stream: "logs/test.log"
+  end
 end
