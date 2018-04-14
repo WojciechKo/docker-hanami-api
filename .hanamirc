@@ -1,0 +1,3 @@
+project=bikeramp
+test=rspec
+template=erb
