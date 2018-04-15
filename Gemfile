@@ -15,11 +15,12 @@ end
 group :test, :development do
   gem 'byebug'
   gem 'dotenv', '~> 2.0'
+  gem 'json-schema-rspec'
+  gem 'rack-test'
 end
 
 group :test do
   gem 'rspec'
-  gem 'capybara'
 end
 
 group :production do

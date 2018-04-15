@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trip"],
+  "properties" : {
+    "trip": {
+      "title": "Trip",
+      "type": "object",
+      "additionalProperties": false,
+      "required" : [
+        "start_address",
+        "destination_address",
+        "price",
+        "date"
+      ],
+      "properties": {
+        "start_address": {
+          "type": "string"
+        },
+        "destination_address": {
+          "type": "string"
+        },
+        "price": {
+          "description": "Price in grosz",
+          "type": "integer",
+          "minimum": 0
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
