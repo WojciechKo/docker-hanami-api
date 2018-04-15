@@ -1,3 +1,3 @@
-require './config/environment'
+require './config/application'
 
-run Hanami.app
+run Application

@@ -3,8 +3,9 @@ require_relative './spec_helper'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include JsonHelpers
 
   def app
-    Hanami.app
+    Application
   end
 end

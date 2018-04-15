@@ -35,7 +35,6 @@ module Api
       #
       # middleware.use Rack::Protection
 
-      middleware.use Api::Middleware::ResponseLogger, Hanami.logger
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, defaults to :html
@@ -158,10 +157,7 @@ module Api
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
       end
-    end
 
-    configure :production do
-      handle_exceptions true
     end
   end
 end
