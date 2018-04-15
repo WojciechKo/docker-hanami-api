@@ -1,5 +1,8 @@
-# Configure your routes here
-# See: http://hanamirb.org/guides/routing/overview/
-#
-# Example:
-# get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+namespace 'trips' do
+  post '/', to: 'trips#create'
+end
+
+namespace 'stats' do
+  get '/weekly',  to: 'stats#weekly'
+  get '/monthly', to: 'stats#weekly'
+end

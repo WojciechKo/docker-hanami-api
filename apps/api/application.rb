@@ -1,4 +1,6 @@
 module Api
+  require_relative 'controllers'
+
   class Application < Hanami::Application
     configure do
       ##
