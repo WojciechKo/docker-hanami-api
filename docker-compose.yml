@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  postgres-data:
+    driver: local
+  app-gems:
+    driver: local
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  web:
+    environment:
+      - DATABASE_URL=postgres://postgres@db/bikeramp
+    build: .
+    entrypoint: /app/bin/start
+    stdin_open: true
+    volumes:
+      - .:/app
+      # Mounts a persistable volume in the installed gems folder, so we can add
+      # gems to the app without having to build the development image again:
+      - app-gems:/usr/local/bundle
+    ports:
+      - "80:2300"
+    depends_on:
+      - db
